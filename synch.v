@@ -39,5 +39,14 @@ parameter estado = LOSS_OF_SYNC; // Estado inicial
 
 // -----------------------------------------------
 
+always @(negedge CLK) begin
+    /*if (POWER || RESET || (SIGNAL_CHANGE && ~MR_LOOPBACK && PUDI)) begin
+        $display("Full detection of signals");
+    end*/
+
+    if (POWER) begin
+        $display("Full detection of signals");
+    end
+end
 
 endmodule
